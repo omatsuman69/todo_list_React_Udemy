@@ -18,7 +18,17 @@ const onClickAdd = () => {
   const completeButton = document.createElement("button");
   completeButton.textContent = "完了";
   completeButton.addEventListener("click", () => {
-    alert("完了");
+    //クリックしたら移動
+    const moveTarget = completeButton.parentNode.parentNode;
+    //c完了ボタンと削除ボタンを削除
+    completeButton.remove();
+    deleteButton.remove();
+    //戻すボタンを作成
+    const returnButton = document.createElement("button");
+    returnButton.textContent = "戻す";
+    document.getElementById("complete-list").append(moveTarget);
+    //moveTarget.childNode.appendChild(returnButton);
+    console.log(document.querySelector("#complete-list"));
   });
 
   //削除ボタンの作成
