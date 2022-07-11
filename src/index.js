@@ -20,14 +20,15 @@ const onClickAdd = () => {
   completeButton.addEventListener("click", () => {
     //クリックしたら移動
     const moveTarget = completeButton.parentNode.parentNode;
-    //c完了ボタンと削除ボタンを削除
-    completeButton.remove();
-    deleteButton.remove();
     //戻すボタンを作成
     const returnButton = document.createElement("button");
     returnButton.textContent = "戻す";
+    div.appendChild(returnButton);
+    //完了ボタンと削除ボタンを削除
+    completeButton.remove();
+    deleteButton.remove();
+
     document.getElementById("complete-list").append(moveTarget);
-    //moveTarget.childNode.appendChild(returnButton);
     console.log(document.querySelector("#complete-list"));
   });
 
